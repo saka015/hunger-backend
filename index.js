@@ -26,9 +26,7 @@
 //   console.log("Server is Working");
 // });
 
-
 // bard
-
 
 import express from "express";
 import connect from "./db.js";
@@ -36,6 +34,7 @@ import createUserRouter from "./Routes/CreateUser.js";
 import displayData from "./Routes/DisplayData.js";
 import orderData from "./Routes/OrderData.js";
 
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -56,6 +55,6 @@ app.use("/api", createUserRouter);
 app.use("/api", displayData);
 app.use("/api", orderData);
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("Server is Working");
 });
